@@ -12,65 +12,81 @@
 <body>
   <nav>
   <div class="logo">
-    <img src="images/Mava%20Logo.PNG" alt="Logo">
+    <img src="images/Mava%20Logo.PNG" alt="Logo" />
   </div>
-  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-  <ul class="nav-links" id="nav-links">
+
+  <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+    ☰
+  </button>
+
+  <ul class="nav-links" id="nav-menu">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#register">Register</a></li>
   </ul>
 </nav>
 
 
-    <section id="home" class="home-section">
-  <div class="overlay">
-    <div class="home-content">
-      <h2>MAVA Industries</h2>
-      <h1>Powering Landlords,<br>Empowering Communities</h1>
-      <p>Affordable solar solutions for South Africa's townships.</p>
-      <a href="#contact" class="cta-button">Get in Touch</a>
-    </div>
+
+  <section class="home-section">
+  <div class="home-content">
+    <h1>
+      Empowering Communities with
+      <span id="rotating-word">clean</span> Energy
+    </h1>
+    <p>
+      We transform organic waste into <strong>bio-LPG</strong> for township households—one backyard at a time.
+    </p>
+    <a href="#learn-more" class="cta-button">Learn More</a>
+  </div>
+  <div class="home-image">
+    <img src="images/Home%20Page.png" alt="Township Energy Solution" />
   </div>
 </section>
+
+
+
+
 
 <section class="about-section" id="about">
   <div class="about-container">
     
     <!-- Image Carousel -->
     <div class="carousel-container">
-      <div class="carousel-track" id="carousel-track">
-        <img src="images/about%20us1.PNG" alt="Solar 1">
-        <img src="images/About.PNG" alt="Solar 1">
-        <img src="images/aboutus2.PNG" alt="Solar 1">
-        <img src="images/about%20us3.PNG" alt="Solar 1">
-        <img src="images/about%20us5.PNG" alt="Solar 1">
-      </div>
-    </div>
+  <div class="carousel-track" id="carousel-track">
+    <img src="images/about us1.PNG" alt="Solar 1">
+    <img src="images/About.PNG" alt="Solar 2">
+    <img src="images/aboutus2.PNG" alt="Solar 3">
+    <img src="images/about us3.PNG" alt="Solar 4">
+    <img src="images/about us5.PNG" alt="Solar 5">
+    <!-- Clone first image for seamless loop -->
+    <img src="images/about us1.PNG" alt="Solar 1 clone">
+  </div>
+</div>
+
 
     <!-- Text Section -->
     <div class="about-text">
-      <h2>About Mava Industries</h2>
-      <p>
-        <strong>Established in 2024</strong>, Mava Industries is revolutionizing green energy access in South African townships. Our rent-to-own solar solution empowers township landlords to offer reliable energy without upfront costs.
-      </p>
+  <h2>About Mava Industries</h2>
+  <p>
+    <strong>Established in 2024</strong>, Mava Industries is revolutionizing green energy access in South African townships. Our rent-to-own solar solution empowers township landlords to offer reliable energy without upfront costs.
+  </p>
 
-      <div class="more-text" id="more-text">
-        <p>
-          We integrate solar panels, batteries, and smart meters with mobile pay-as-you-go options. This gives landlords visibility and tenants predictable billing — all powered by the sun.
-        </p>
-        <p>
-          We envision a just, inclusive energy future where communities thrive with climate-friendly solutions. Mava works closely with partners, policy makers, and innovators to reshape township energy one rooftop at a time.
-        </p>
-      </div>
+  <div class="more-text" id="more-text" style="display: none;">
+    <p>
+      We integrate solar panels, batteries, and smart meters with mobile pay-as-you-go options. This gives landlords visibility and tenants predictable billing — all powered by the sun.
+    </p>
+    <p>
+      We envision a just, inclusive energy future where communities thrive with climate-friendly solutions. Mava works closely with partners, policy makers, and innovators to reshape township energy one rooftop at a time.
+    </p>
+  </div>
 
-      <a href="#" class="cta-button" id="toggle-text-btn">Read More</a>
-    </div>
+  <a href="#" class="cta-button" id="toggle-text-btn" aria-expanded="false" aria-controls="more-text">Read More</a>
+</div>
+
   </div>
 </section>
-
 
 
 
@@ -244,39 +260,8 @@
   <footer>
     &copy; 2025 MAVA Industries. All rights reserved.
   </footer>
-   <script>
-  // Read More / Less
-  const toggleBtn = document.getElementById('toggle-text-btn');
-  const moreText = document.getElementById('more-text');
-  let isExpanded = false;
-
-  toggleBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-    isExpanded = !isExpanded;
-    moreText.style.display = isExpanded ? 'block' : 'none';
-    toggleBtn.textContent = isExpanded ? 'Read Less' : 'Read More';
-  });
-
-  // Carousel Logic
-  const track = document.getElementById('carousel-track');
-const slides = track.querySelectorAll('img');
-let index = 0;
-const totalSlides = slides.length;
-
-function slideCarousel() {
-  index++;
-  if (index >= totalSlides) {
-    index = 0; // reset to first slide after last one
-  }
-  track.style.transform = `translateX(-${index * (100 / totalSlides)}%)`;
-}
-
-setInterval(slideCarousel, 3000); // slide every 3 seconds for smoother speed
-
-</script>
+   <script src="main.js"></script>
 
 
-  <script src="script.js"></script>
-    <script src="dialog.js"></script>
 </body>
 </html>
